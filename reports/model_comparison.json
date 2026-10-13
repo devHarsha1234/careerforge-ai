@@ -1,0 +1,22 @@
+{
+    "Logistic Regression": {
+        "mean_f1": 0.0,
+        "std_f1": 0.0
+    },
+    "Decision Tree": {
+        "mean_f1": 0.2119119407710816,
+        "std_f1": 0.010253959576562078
+    },
+    "Random Forest": {
+        "mean_f1": 0.0,
+        "std_f1": 0.0
+    },
+    "SVM": {
+        "mean_f1": 0.0,
+        "std_f1": 0.0
+    },
+    "KNN": {
+        "mean_f1": 0.09121475220435235,
+        "std_f1": 0.01088472540190839
+    }
+}

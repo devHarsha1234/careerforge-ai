@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  * { 
+    border-color: #E2E8F0; 
+  }
+  body { 
+    background-color: #FAFAF7;
+    color: #0F172A;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif;
+    letter-spacing: -0.025em;
+    color: #0F172A;
+  }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background-color: #FAFAF7; }
+  ::-webkit-scrollbar-thumb { background-color: #CBD5E1; border-radius: 9999px; }
+  ::-webkit-scrollbar-thumb:hover { background-color: #94A3B8; }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .bg-noise {
+    background-image: radial-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+  }
+}
+
+/* ── Hero career photo Ken Burns effect ── */
+@keyframes kenBurns {
+  0%   { transform: scale(1.00) translate(0%, 0%); }
+  50%  { transform: scale(1.08) translate(-1.5%, -1%); }
+  100% { transform: scale(1.00) translate(0%, 0%); }
+}
+.hero-photo {
+  animation: kenBurns 20s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* ── Floating annotation pills ── */
+@keyframes floatPill1 {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50%       { transform: translateY(-10px) rotate(1deg); }
+}
+@keyframes floatPill2 {
+  0%, 100% { transform: translateY(0px) rotate(1deg); }
+  50%       { transform: translateY(-8px) rotate(-1deg); }
+}
+@keyframes floatPill3 {
+  0%, 100% { transform: translateY(0px) rotate(-0.5deg); }
+  50%       { transform: translateY(-12px) rotate(0.5deg); }
+}
+.pill-float-1 { animation: floatPill1 5s ease-in-out infinite; }
+.pill-float-2 { animation: floatPill2 6.5s ease-in-out infinite 1s; }
+.pill-float-3 { animation: floatPill3 7s ease-in-out infinite 2s; }
+
+/* ── Soft fade-in for hero image container ── */
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.hero-image-fade {
+  animation: heroFadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ── Subtle gradient shimmer on trust strip ── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.trust-shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.08) 50%, transparent 100%);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ── Accessibility: Reduced motion support ── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo,
+  .pill-float-1,
+  .pill-float-2,
+  .pill-float-3,
+  .trust-shimmer {
+    animation: none !important;
+    transform: none !important;
+  }
+}

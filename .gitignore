@@ -1,0 +1,58 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Flask / local runtime
+instance/
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Build / cache
+.cache/
+.pytest_cache/
+.mypy_cache/
+
+# Scratch / temporary files
+scratch/
+tmp/
+temp/
+
+# Archives / large local backups
+*.zip
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated reports / local artifacts
+*.png
+*.jpg
+*.jpeg
+
+# Keep production frontend assets
+!frontend/public/assets/
+!frontend/public/assets/*.mp4
+!frontend/public/assets/*.jpg
+!frontend/public/assets/*.jpeg
+!frontend/public/assets/*.png
+
+/gemini_generated_video_2ecacdad.mp4
